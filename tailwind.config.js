@@ -5,7 +5,15 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                Patrick: ['Patrick Hand', 'cursive'],
+                Caveat: ['Caveat', 'cursive']
+            },
+            cursor: {
+                hand: 'url(/images/icons/hand-cursor.png), pointer',
+            },
+        },
     },
     plugins: [
         require('tailwind-scrollbar'),

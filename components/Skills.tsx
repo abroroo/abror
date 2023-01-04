@@ -1,9 +1,43 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import Skill from './Skill'
-type Props = {}
+import React, { useEffect, useRef } from 'react'
+import { animate, motion, useAnimation, useInView  } from 'framer-motion'
+import SkillCard from './SkillCard'
+import { PageInfo, Skill } from '../typings'
+import { urlFor } from '../sanity'
 
-function Skills({}: Props) {
+
+type Props = {
+  skills: Skill[];
+  pageInfo: PageInfo;
+}
+
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i: number) => {
+    const delay = 1 + i * 0.5;
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+        opacity: { delay, duration: 0.01 }
+      }
+    };
+  }
+};
+
+
+function Skills({skills, pageInfo}: Props) {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const control = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      control.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <motion.div 
     initial={{opacity: 0}}
@@ -12,23 +46,37 @@ function Skills({}: Props) {
     className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'>
     <h3 className='absolute top-24 text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(33, 33, 33)] opacity-70  px-10'> Skills</h3>
 
-    <h4 className='absolute top-44 uppercase tracking-[3px] text-[rgb(33,33,33)] text-[12px] '>Hover over a skill for current proficiency</h4>
+    <motion.svg 
+initial="hidden"
+ref={ref}
+animate={control}
+className='absolute flex items-center justify-center mx-auto h-10 top-28 scale-[1.5] scale-x-[.5]' >
 
+<motion.line
+x1="130"
+y1="20"
+x2="170"
+y2="14"
+stroke="#fffade"
+variants={draw}
+custom={0.1} 
+className=''/>
+</motion.svg>
+
+    <h4 className='absolute top-44 uppercase tracking-[3px] text-[rgb(33,33,33)] text-[11px] md:text-[12px] xl:text-[12px] '>Hover over a skill for current proficiency</h4>
+
+    
 
     <div className='grid grid-cols-4 gap-5'>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+      {skills?.slice(0, skills.length / 2).map((skill) => (
+          <SkillCard key={skill._id} skill={skill} />
+      ))}
+
+      {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <SkillCard key={skill._id} skill={skill} directionLeft />
+      ))}
+        
+     
     </div>
 
     </motion.div>
