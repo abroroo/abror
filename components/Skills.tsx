@@ -44,13 +44,15 @@ function Skills({skills, pageInfo}: Props) {
     whileInView={{ opacity: 1}}
     transition={{ duration: 1.5}}
     className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'>
-    <h3 className='absolute top-24 text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(33, 33, 33)] opacity-70  px-10'> Skills</h3>
+      <div className='flex relative flex-col items-center'> 
+
+    <h3 className='relative  text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(33, 33, 33)] opacity-70  px-10'> Skills</h3>
 
     <motion.svg 
 initial="hidden"
 ref={ref}
 animate={control}
-className='absolute flex items-center justify-center mx-auto h-10 top-28 scale-[1.5] scale-x-[.5]' >
+className='relative flex items-center justify-center mx-auto h-10 scale-[1.5] scale-x-[.5]' >
 
 <motion.line
 x1="130"
@@ -63,11 +65,11 @@ custom={0.1}
 className=''/>
 </motion.svg>
 
-    <h4 className='absolute top-44 uppercase tracking-[3px] text-[rgb(33,33,33)] text-[11px] md:text-[12px] xl:text-[12px] '>Hover over a skill for current proficiency</h4>
+    <h4 className='relative uppercase tracking-[3px] text-[rgb(33,33,33)] text-[11px] md:text-[12px] xl:text-[12px] xl:mt-5 '>Hover over a skill for current proficiency</h4>
 
     
 
-    <div className='grid grid-cols-4 gap-5'>
+    <div className='grid grid-cols-4 gap-5 mt-10 xl:mt-16'>
       {skills?.slice(0, skills.length / 2).map((skill) => (
           <SkillCard key={skill._id} skill={skill} />
       ))}
@@ -78,7 +80,7 @@ className=''/>
         
      
     </div>
-
+    </div>
     </motion.div>
   )
 }

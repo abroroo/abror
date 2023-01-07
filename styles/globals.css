@@ -1,3 +1,10 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+/* Google Fonts */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,14 +81,6 @@
     font-family: 'Casper Medium';
     src: url('../public/fonts/CasperDisplay-Medium.otf');
 }
-
-
-/* Google Fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
-
-/* Google Fonts */
 
 html,
 body {

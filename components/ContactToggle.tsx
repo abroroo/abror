@@ -58,7 +58,7 @@ useEffect(() => {
 const cursorImage = urlFor(pageInfo?.slippersPic).url()
 
 
-console.log(socials)
+// console.log(socials)
 
 
   return (
@@ -129,8 +129,8 @@ className='h-10 w-10 '
 
 
        
-<div className='relative flex items-center justify-center h-screen flex-col'>
-        <div className='relative flex flex-col space-y-10 '>
+<div className='relative flex items-center justify-center h-screen flex-col w-[95vw]'>
+        <div className='relative flex flex-col space-y-10 w-[90vw] '>
             <h4 className=' text-0xl md:text-2xl xl:text-2xl font-bold text-center '>
             Let&#39;s get in touch{" "}
                 <span className='underline underline-offset-4 decoration-[#fff42d]'>...</span>
@@ -149,7 +149,7 @@ className='h-10 w-10 '
             </div>
 
 
-            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
+            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-[80vw] md:w-fit xl:w-fit mx-auto'>
                 <div className='flex flex-col md:flex-row xl:flex-row space-y-2 md:space-y-0 xl:space-y-0 space-x-0  md:space-x-2 xl:space-x-2'>
                     <input {...register('name')} placeholder="What's your name?" className='contactInput focus:border-[rgb(33,33,33)] hover:border-[rgb(33,33,33)] text-sm' type="text" />
                     <input {...register('email')} placeholder='Type your email' className='contactInput focus:border-[rgb(33,33,33)] hover:border-[rgb(33,33,33)] text-sm' type="email" />

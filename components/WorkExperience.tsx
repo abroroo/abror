@@ -43,36 +43,34 @@ const Experience = ({experiences, pageInfo}: Props) => {
       }}
       whileInView={{ opacity: 1}}
       transition={{duration: 1.5}}
-    className='h-screen flex relative flex-col overflow-hidden md:flex-row max-w-full px-10 justify-evenly mx-auto items-center top-24  overflow-y-hidden'>
+    className='h-screen flex relative flex-col overflow-hidden md:flex-row max-w-full px-10 justify-evenly mx-auto items-center  overflow-y-hidden'>
         
-        <div className='realative flex items-center justify-center '>
+        <div className='realative flex flex-col items-center justify-center '>
 
        
-        <h3 className='absolute top-10 text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(33, 33, 33)] opacity-70 px-10'>
+        <h3 className='relative  text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(33, 33, 33)] opacity-70 px-10 '>
         Experience
        </h3>
        <motion.svg 
 initial="hidden"
 ref={ref}
 animate={control}
-className='absolute flex items-center justify-center mx-auto h-10 top-14 scale-[1.5] scale-x-[.5]' >
+className='relative flex items-center justify-center mx-auto h-10 scale-[1.5] scale-x-[.5] mb-10' >
 
 <motion.line
 x1="130"
-y1="23"
+y1="20"
 x2="170"
-y2="17"
+y2="14"
 stroke="#fffade"
 variants={draw}
 custom={0.1} 
 className=''/>
 </motion.svg>
        
-       {/* <img 
-        className='absolute h-[250px] w-[250px] md:h-[350px] md:w-[350px] xl:h-[450px] xl:w-[550px] left-5 top-10 md:left-20 xl:left-24 object-cover z-[0]'
-        src={urlFor(pageInfo?.profilePic).url()}/> */}
+    
 
-       <div className='w-full h-full flex space-x-5 overflow-x-scroll p-5 snap-x snap-mandatory'>
+       <div className='w-full h-full flex space-x-5 overflow-x-scroll snap-x snap-mandatory'>
        
        
 

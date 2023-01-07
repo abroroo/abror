@@ -104,7 +104,7 @@ className=''/>
       }}
       className='relative'
       >
-        <p className='relative md:text-[15px] md:px-20 text-[rgb(33, 33, 33)] font-regular font-sans opacity-80 text-center mt-5 sm:px-5'>{pageInfo?.backgroundInformation}
+        <p className='relative md:text-[15px] xl:text-[16px] md:px-20 text-[rgb(33, 33, 33)] font-regular font-jost opacity-80 text-center mt-5 sm:px-5'>{pageInfo?.backgroundInformation}
         </p>
         </motion.div>
 

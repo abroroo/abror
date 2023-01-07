@@ -11,17 +11,21 @@ import { urlFor } from '../sanity';
 type Props = {
     socials: Social[];
     pageInfo: PageInfo;
-    shown: boolean;
-    close: any;
-    children: any;
-    
 }
+
+type  ModalProps = {
+     shown: boolean;
+     close: any;
+     children: any;
+     socials: Social[];
+    pageInfo: PageInfo;
+};
 
 
 
 {/* ShowModel start */}
 
-export function Modal( { children, shown, close, pageInfo, socials}: Props) {
+export function Modal( { children, shown, close, pageInfo, socials}: ModalProps) {
     return shown ? (
         <div
        
@@ -63,7 +67,7 @@ function Header({socials, pageInfo}: Props) {
     <header className= 'relative top-5 xl:top-12 p-auto flex items-start justify-center mx-auto max-w-screen z-20 xl:items-center'>
         
             {/* Social Icons */}
-            <div className='absolute flex flex-row items-center left-5 xl:left-10 md:left-10 '>
+            <div className='hidden md:flex xl:flex absolute flex-row items-center left-5 xl:left-10 md:left-10 '>
      
        {/* {socials.map((social, i) => ( */}
                         {/* Social 1 */}
@@ -221,7 +225,7 @@ function Header({socials, pageInfo}: Props) {
         src={urlFor(pageInfo?.burgerPic).url()}
             />
          
-            <p className='hidden md:inline-flex text-sm tracking-[-0.2px] text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation py-1 font-semibold text-[11px] md:text-[12px] xl:text-[13px]'>CONTACT</p>
+            <p className='hidden md:inline-flex text-sm tracking-[1px] text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation py-1 font-semibold text-[11px] md:text-[12px] xl:text-[13px]'>CONTACT</p>
 
             
         </motion.div>

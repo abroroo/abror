@@ -10,7 +10,7 @@ type Props = {
 export default function ExperienceCard({experience}: Props) {
   return (
     
-      <article className='flex flex-col rounded-lg p-5 items-center space-y-7 flex-shrink-0 w-full snap-center  hover:opacity-100 opacity-90 cursor-pointer transition-opacity duration-200 z-[10]'>
+      <article className='flex flex-col rounded-lg  items-center space-y-7 flex-shrink-0 w-full snap-center  hover:opacity-100 opacity-90 cursor-pointer transition-opacity duration-200 z-[10]'>
         <a href={experience?.companyWebsite} rel="noopener noreferrer" target="_blank">
         <motion.img 
       initial={{
@@ -30,23 +30,13 @@ export default function ExperienceCard({experience}: Props) {
       
         <h4 className='text-2xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold text-1xl mt-1'>{experience?.company}</p>
-        <div className='flex space-x-2 my-2 items-center justify-center'>
-          {/* Tech used */}
-         {experience.technologies.map((technology) => (
-          <img 
-          alt="techs"
-          key={technology._id}
-          className='h-10 w-10 rounded bg-[#fffade]'
-          src={urlFor(technology.image).url()}
-          />
-         ))}
-        </div>
+       
         <p className='uppercase py-5 text-[rgb(33,33,33)] opacity-60 '>
           {new Date(experience.dateStarted).toDateString()} - {experience.isCurrentlyWorkingHere ? 'Present' : new Date(experience.dateEnded).toDateString()}
         </p>
        
       </div>
-      <ul className='list-disc space-y-4 h-[120px] ml-16 md:text-[15px] pr-3 font-regular font-sans text-[rgb(33,33,33)] '>
+      <ul className='list-disc space-y-4 h-[120px] ml-4 md:text-[15px] xl:text-[16px] pr-3 font-regular font-jost text-[rgb(33,33,33)] '>
         {experience.points.map((point, i) => (
           <li key={i}>{point}</li>
         ))}

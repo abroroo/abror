@@ -48,7 +48,7 @@ function Resume({pageInfo, socials}: Props) {
 
 
   // resume download function
-  // console.log(pageInfo.resume)
+  console.log(pageInfo.resume.asset)
 
  const [objectUrl, setObjectUrl] = useState("");
  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
@@ -56,7 +56,7 @@ function Resume({pageInfo, socials}: Props) {
  const [type, fileId, extension ] = pageInfo?.resume?.asset?._ref.split("-");
  const resumeUrl = `https://cdn.sanity.io/files/${projectId}/${dataset}/${fileId}.${extension}`
  
-
+console.log(fileId)
 
 useEffect(() => {
   async function downloadFile() {
@@ -159,9 +159,9 @@ href="#hero" className='flex items-center justify-center top-8 absolute cursor-p
          
 
 <div className='absolute bottom-[3%] xl:bottom-[2%] bg-[#f1f5f5] h-[250px] md:h-[300px] xl:h-[350px] w-[100vw] ' />
-<div className='absolute bottom-0 bg-[#fff] h-[50px] w-[100vw] flex flex-row items-center justify-between' >
+<div className='absolute bottom-0 bg-[#fff] h-[60px] w-[100vw] flex flex-col md:flex-row xl:flex-row items-center justify-between z-10 md:z-0 xl:z-0 pb-3 md:pb-0 xl:pb-0' >
 
-<div className='relative items-center justify-center z-10 ml-5'>
+<div className='relative items-center justify-center z-10 md:ml-5 xl:ml-5 ml-0 pt-2 md:mt-0 xl:mt-0'>
 
 {socials.map((social, i) => (
 
@@ -199,7 +199,7 @@ src={urlFor(social?.image).url()} alt="" />
 </div>
 
 
-<p className='relative text-[12px] font-semibold  text-[rgb(33, 33, 33)] opacity-70  z-10 mr-5'><a href='https://github.com/abroroo' target="__blank">@abroroo</a> – Jeonju-si, South Korea, 54899</p>
+<p className='relative text-[12px] font-semibold  text-[rgb(33, 33, 33)] opacity-70  z-10 md:mr-5 xl:mr-5 mr-0'><a href='https://github.com/abroroo' target="__blank">@abroroo</a> – Jeonju-si, South Korea, 54899</p>
 
 </div>
 

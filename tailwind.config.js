@@ -7,8 +7,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                Patrick: ['Patrick Hand', 'cursive'],
-                Caveat: ['Caveat', 'cursive']
+                patrick: ['Patrick Hand', 'cursive'],
+                jost: ['Jost', 'sans-serif']
             },
             cursor: {
                 hand: 'url(/images/icons/hand-cursor.png), pointer',

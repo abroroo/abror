@@ -55,7 +55,7 @@ function Hero({pageInfo}: Props) {
         initial={{opacity: 0, }}
         animate={{opacity: 1, }}
         transition={{ duration: 1}}
-        className='absolute text-[13px] top-12 left-56 md:top-20 md:right-5 xl:top-28 xl:-right-5  z-30  xl:text-[14px] px-1 delay-1000 text-[rgb(33,33,33)] opacity-90 font-light font-mono'>
+        className='absolute text-[13px] top-12 left-56 md:top-20 md:right-5 xl:top-28 xl:-right-5  z-30  xl:text-[16px] px-1 delay-1000 text-[rgb(33,33,33)] opacity-90 font-light tracking-[1px] font-patrick'>
        <Typewriter 
             words={[`                                         Hi, I'am ${pageInfo?.name}`]}
             loop={1}
@@ -65,17 +65,7 @@ function Hero({pageInfo}: Props) {
             
      /> 
       </motion.h1>
-        {/* <motion.img 
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        viewport={{once: true}}
-        transition={{
-        duration: 1,
-          delay: 6
-      }}
-        className='absolute h-32 w-44 md:h-40 md:w-56 top-[-40px] right-0 md:top-[-50px] md:right-3 xl:top-0 xl:right-24'
-        src={urlFor(pageInfo?.profilePic).url()}
-        /> */}
+       
         </motion.div>
        
         
@@ -85,18 +75,9 @@ function Hero({pageInfo}: Props) {
         
         
 
-    <div className='z-10'>
+    <div className='z-10 hidden md:block xl:block'>
     
-    {/* <h1 className='font-semibold font-sans text-lg px-10 delay-700 text-[rgb(33,33,33)] opacity-90'>
-      <Typewriter 
-            words={[`Hi, my name is ${pageInfo?.name}`]}
-            loop={1}
-            typeSpeed={150}
-            deleteSpeed={100}
-            delaySpeed={10000}
-            
-     />
-      </h1> */}
+   
       <LazyMotion features={domAnimation}>
    
   
@@ -112,13 +93,13 @@ function Hero({pageInfo}: Props) {
         transition={{
           duration: 3,
         }}
-      className='pb-10 space-x-2 md:space-x-4 xl:space-x-6 font-semibold text-[11px] md:text-[12px] xl:text-[13px]'>
+      className='pb-10 space-x-2 flex flex-col md:flex-row xl:flex-row md:space-x-4 xl:space-x-6 font-bold md:font-semibold xl:font-semibold text-[15px] md:text-[12px] xl:text-[13px] space-y-10 md:space-y-0 xl:space-y-0 '>
         
-       <Link href='#who'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation'>Who</button></Link>
-       <Link href='#experience'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation'>Expereience</button></Link>
-       <Link href='#skills'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation'>Skills</button></Link>
-       <Link href='#projects'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation'>Projects</button></Link>
-       <Link href='#resume'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation'>Résumé</button></Link>
+       <Link href='#who'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation tracking-[3px] md:tracking-[2px] xl:tracking-[2px] font-jost '>Who</button></Link>
+       <Link href='#experience'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation tracking-[3px] md:tracking-[2px] xl:tracking-[2px] font-jost '>Expereience</button></Link>
+       <Link href='#skills'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation tracking-[3px] md:tracking-[2px] xl:tracking-[2px] font-jost'>Skills</button></Link>
+       <Link href='#projects'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation tracking-[3px] md:tracking-[2px] xl:tracking-[2px] font-jost '>Projects</button></Link>
+       <Link href='#resume'><button className='heroButton text-[rgb(33,33,33)] opacity-90 hover:opacity-100 hover-underline-animation tracking-[3px] md:tracking-[2px] xl:tracking-[2px] font-jost'>Résumé</button></Link>
         
        
        
